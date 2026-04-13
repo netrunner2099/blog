@@ -66,21 +66,3 @@
 <?php wp_footer(); ?>
 </body>
 </html>
-
-<?php
-/**
- * Menu de fallback para o rodapé.
- */
-function netrunner_footer_fallback_menu() {
-    echo '<ul class="footer-nav-menu">';
-    $links = array(
-        __( 'Início', 'netrunner' )               => home_url( '/' ),
-        __( 'Sobre', 'netrunner' )                => home_url( '/sobre' ),
-        __( 'Contato', 'netrunner' )              => home_url( '/contato' ),
-        __( 'Política de Privacidade', 'netrunner' ) => home_url( '/politica-de-privacidade' ),
-    );
-    foreach ( $links as $label => $url ) {
-        echo '<li><a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a></li>';
-    }
-    echo '</ul>';
-}

@@ -37,7 +37,6 @@
             ?>
         </nav>
 
-        <!-- Controles: dark mode toggle + hamburger -->
         <div class="header-controls">
             <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="<?php esc_attr_e( 'Alternar modo escuro', 'netrunner' ); ?>">
                 <span class="icon-sun" aria-hidden="true">☀️</span>
@@ -55,16 +54,3 @@
 </header><!-- .site-header -->
 
 <div id="page" class="site">
-<?php
-
-/**
- * Menu de fallback caso nenhum menu esteja configurado.
- */
-function netrunner_fallback_menu() {
-    echo '<ul class="nav-menu">';
-    echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Início', 'netrunner' ) . '</a></li>';
-    echo '<li><a href="' . esc_url( home_url( '/categorias' ) ) . '">' . esc_html__( 'Categorias', 'netrunner' ) . '</a></li>';
-    echo '<li><a href="' . esc_url( home_url( '/sobre' ) ) . '">' . esc_html__( 'Sobre', 'netrunner' ) . '</a></li>';
-    echo '<li><a href="' . esc_url( home_url( '/contato' ) ) . '">' . esc_html__( 'Contato', 'netrunner' ) . '</a></li>';
-    echo '</ul>';
-}

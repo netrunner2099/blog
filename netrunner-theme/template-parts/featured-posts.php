@@ -64,7 +64,7 @@
         </div><!-- .posts-grid -->
 
         <div class="section-footer">
-            <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ?: home_url( '/?post_type=post' ) ); ?>" class="btn btn-outline btn-lg">
+            <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ?: get_post_type_archive_link( 'post' ) ); ?>" class="btn btn-outline btn-lg">
                 <?php esc_html_e( 'Ver todos os artigos', 'netrunner' ); ?>
                 <span aria-hidden="true"> →</span>
             </a>

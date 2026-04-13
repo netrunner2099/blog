@@ -209,3 +209,30 @@ function netrunner_body_classes( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'netrunner_body_classes' );
+
+// ─── Menu de fallback (header) ────────────────────────────────────────────────
+
+function netrunner_fallback_menu() {
+    echo '<ul class="nav-menu">';
+    echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Início', 'netrunner' ) . '</a></li>';
+    echo '<li><a href="' . esc_url( home_url( '/categorias' ) ) . '">' . esc_html__( 'Categorias', 'netrunner' ) . '</a></li>';
+    echo '<li><a href="' . esc_url( home_url( '/sobre' ) ) . '">' . esc_html__( 'Sobre', 'netrunner' ) . '</a></li>';
+    echo '<li><a href="' . esc_url( home_url( '/contato' ) ) . '">' . esc_html__( 'Contato', 'netrunner' ) . '</a></li>';
+    echo '</ul>';
+}
+
+// ─── Menu de fallback (footer) ────────────────────────────────────────────────
+
+function netrunner_footer_fallback_menu() {
+    echo '<ul class="footer-nav-menu">';
+    $links = array(
+        __( 'Início', 'netrunner' )                  => home_url( '/' ),
+        __( 'Sobre', 'netrunner' )                   => home_url( '/sobre' ),
+        __( 'Contato', 'netrunner' )                 => home_url( '/contato' ),
+        __( 'Política de Privacidade', 'netrunner' ) => home_url( '/politica-de-privacidade' ),
+    );
+    foreach ( $links as $label => $url ) {
+        echo '<li><a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a></li>';
+    }
+    echo '</ul>';
+}
